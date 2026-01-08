@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+h3{ color: rgb(6, 132, 132); background-color: bisque;}
+h1{ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  background-color: bisque; }
+button{color: rgb(0, 255, 85); background-color: red;}
+
+body{background-image:url("download\ \(5\).jpg");}
+
+</style>
+
+
+
+</head>
+<body>
+    <h1>Basic calculator</h1>
+    <input id="num1" type="number" placeholder="Number 1">
+    <input id="num2" type="number" placeholder="Number 2">
+    
+    <br>
+    
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">−</button>
+    <button onclick="calculate('*')">×</button>
+    <button onclick="calculate('/')">÷</button>
+    
+    <h3>Result: <span id="result">?</span></h3>
+    
+    <script>
+        function calculate(operator) {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let answer;
+
+            if (operator === "+") {
+                answer = a + b;
+            } else if (operator === "-") {
+                answer = a - b;
+            } else if (operator === "*") {
+                answer = a * b;
+            } else if (operator === "/") {
+                answer = a / b;
+            }
+
+            document.getElementById("result").textContent = answer;
+        }
+    </script>
+</body>
+</html>
